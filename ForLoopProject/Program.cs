@@ -23,7 +23,7 @@ namespace ForLoopProject {
                 allNames += upperName;// this will take the value of allnames and 'concatenate' it to upperName
 
             }
-            Console.WriteLine(allNames);
+            Console.WriteLine(allNames);//Remember to put the Console Writeline outside of the statement
         }
             
             //int total = 0;
