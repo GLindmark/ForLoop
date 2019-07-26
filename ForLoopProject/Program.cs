@@ -20,23 +20,37 @@ namespace ForLoopProject {
 
             foreach (customer cust in customers) {
 
-                if (cust.State == "MT") {
-                    FoundMTCust = true;
-
+                switch (cust.State) {
+                    case "MT":
+                        FoundMTCust = true;
+                        break;
+                    case "SD":
+                        FoundSDCust = true;
+                        break;
                 }
+                Console.WriteLine($"Found MT customer: {FoundMTCust}");
+                Console.WriteLine($"Found SD customer: {FoundSDCust}");
 
-                if (cust.State == "SD") {
-                    FoundSDCust = true;
-                }
+                //if (cust.State == "MT") {
+                //    FoundMTCust = true;
+                //    continue;
+                //Once a MT customer is identified, it will then go back to the beginning for the 
+                //next record rather than check further for another state.
+                //}
 
-                if(FoundSDCust && FoundMTCust) {
-                    break;
-                }
+
+                //if (cust.State == "SD") {
+                //    FoundSDCust = true;
+                //}
+
+                //if(FoundSDCust && FoundMTCust) {
+                //    break;
+            }
 
             }
 
-            Console.WriteLine($"Found MT customer: {FoundMTCust}");
-            Console.WriteLine($"Found SD customer: {FoundSDCust}");
+            //Console.WriteLine($"Found MT customer: {FoundMTCust}");
+            //Console.WriteLine($"Found SD customer: {FoundSDCust}");
 
          
 
@@ -92,4 +106,4 @@ namespace ForLoopProject {
         //decimal average = total / (decimal) ints.Length;// putting 'decimal' infront is a CAST which returns a decimal
         //Console.WriteLine($"Total; {total} , Average: {average}");
     }
-}
+
